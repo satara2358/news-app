@@ -19,7 +19,7 @@ export default function PageLayout({children}){
     <main>
       {children}
     </main>
-    <style jsx>{`
+    <style>{`
     header {
       display : flex;
       justify-content: space-between;

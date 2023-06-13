@@ -1,5 +1,4 @@
 import Image from 'next/image'
-import Link from 'next/link'
 import PageLayout from '../../components/PageLayout'
 // import { useRouter } from 'next/router'
 // api 4ca128c8b2a143669a0196c156be9d1e
@@ -7,13 +6,15 @@ import PageLayout from '../../components/PageLayout'
 export default function Home({ articles }){
   return (
     <PageLayout title='newsApp - Home'>
-      <div className='not-sr-only'>
+      <div className={global.container}>
         {articles.length === 0 && <p>no hay nada</p>}
         {articles.length > 0 && articles.map((article, index) => (
           <div key={index}>
             <Image
               alt={`imagen del articulo ${article.title}`}
               src={article.urlToImage}
+              width={450}
+              height={300}
               />
               <h2>{article.title}</h2>
               <p>
